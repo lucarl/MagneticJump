@@ -121,6 +121,49 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &141928711
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 141928712}
+  - component: {fileID: 141928713}
+  m_Layer: 8
+  m_Name: PointTip
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &141928712
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141928711}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 657032301}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &141928713
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 141928711}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 118dbb621471b4b2f957195036c213d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &472834596
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -375,6 +418,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 5924114157098236043}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &657032304
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 657032297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6b468ad8681940fe82ae9f4a71cf359, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Projectile: {fileID: 7577477696992578198, guid: 978d6039aaf5343adad200d07d504dd6,
+    type: 3}
+  m_SpawnTransform: {fileID: 141928712}
 --- !u!4 &692012892 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 241489349001917444, guid: e155788383a5a4c90854eb873b7a35a6,
@@ -901,7 +959,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1806835107}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCheckTransform
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1078,11 +1136,32 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 5924114157549550818, guid: 4e16448ad628a4d26a9e8ab6f2b27cb9,
+        type: 3}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     - target: {fileID: 5924114157549550820, guid: 4e16448ad628a4d26a9e8ab6f2b27cb9,
         type: 3}
       propertyPath: groundCheckTransform
       value: 
       objectReference: {fileID: 1806835107}
+    - target: {fileID: 5924114157549550820, guid: 4e16448ad628a4d26a9e8ab6f2b27cb9,
+        type: 3}
+      propertyPath: playerMask.m_Bits
+      value: 55
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924114157549550820, guid: 4e16448ad628a4d26a9e8ab6f2b27cb9,
+        type: 3}
+      propertyPath: pointTip
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5924114157549550820, guid: 4e16448ad628a4d26a9e8ab6f2b27cb9,
+        type: 3}
+      propertyPath: magnet
+      value: 
+      objectReference: {fileID: 7577477696992578198, guid: 978d6039aaf5343adad200d07d504dd6,
+        type: 3}
     - target: {fileID: 5924114157549550821, guid: 4e16448ad628a4d26a9e8ab6f2b27cb9,
         type: 3}
       propertyPath: m_Constraints

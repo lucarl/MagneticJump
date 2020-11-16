@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Magnet : MonoBehaviour
 {
-    public float speed = 100f;
+    public float speed;
     
     // Start is called before the first frame update
     void Start()
@@ -15,6 +15,7 @@ public class Magnet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += transform.right * 5f * Time.deltaTime;
+        transform.Translate(Vector3.up * speed * Time.deltaTime);
     }
 }
+    

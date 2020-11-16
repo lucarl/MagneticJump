@@ -6,11 +6,15 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public Transform groundCheckTransform;
+    public LayerMask playerMask;
+
+    private Vector2 lookDirection;
+    private float lookAngle;
+    
     private bool jumpKeyWasPressed;
     private bool isGrounded;
     private float horizontalInput;
     private Rigidbody rigidBodyComponent;
-    public GameObject magneticPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -21,11 +25,6 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
-        {
-            GameObject magneticObject = Instantiate(magneticPrefab);
-            magneticObject.transform.position = transform.position;
-        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
             jumpKeyWasPressed = true;
@@ -37,7 +36,9 @@ public class Player : MonoBehaviour
     // Called every physics update    
     private void FixedUpdate()
     {
-        if (Physics.OverlapSphere(groundCheckTransform.position, 0.1f).Length == 1)
+        rigidBodyComponent.velocity = new Vector3(horizontalInput, rigidBodyComponent.velocity.y, 0);
+        
+        if (Physics.OverlapSphere(groundCheckTransform.position, 0.1f, playerMask).Length == 0)
         {
             return;
         }
@@ -46,8 +47,6 @@ public class Player : MonoBehaviour
             rigidBodyComponent.AddForce(Vector3.up * 5, ForceMode.VelocityChange);
             jumpKeyWasPressed = false;
         }
-        
-        rigidBodyComponent.velocity = new Vector3(horizontalInput, rigidBodyComponent.velocity.y, 0);
     }
     
 }

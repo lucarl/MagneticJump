@@ -5,11 +5,12 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-
+    public Transform groundCheckTransform;
     private bool jumpKeyWasPressed;
     private bool isGrounded;
     private float horizontalInput;
     private Rigidbody rigidBodyComponent;
+    public GameObject magneticPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -20,12 +21,14 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            GameObject magneticObject = Instantiate(magneticPrefab);
+            magneticObject.transform.position = transform.position;
+        }
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if (isGrounded)
-            {
-                rigidBodyComponent.AddForce(Vector3.up * 5, ForceMode.VelocityChange);
-            }
+            jumpKeyWasPressed = true;
         }
 
         horizontalInput = Input.GetAxis("Horizontal");
@@ -34,16 +37,17 @@ public class Player : MonoBehaviour
     // Called every physics update    
     private void FixedUpdate()
     {
+        if (Physics.OverlapSphere(groundCheckTransform.position, 0.1f).Length == 1)
+        {
+            return;
+        }
+        
+        if (jumpKeyWasPressed){
+            rigidBodyComponent.AddForce(Vector3.up * 5, ForceMode.VelocityChange);
+            jumpKeyWasPressed = false;
+        }
+        
         rigidBodyComponent.velocity = new Vector3(horizontalInput, rigidBodyComponent.velocity.y, 0);
     }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        isGrounded = true;
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        isGrounded = false;
-    }
+    
 }

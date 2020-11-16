@@ -22,25 +22,18 @@ public class Player : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            jumpKeyWasPressed = true;
+            if (isGrounded)
+            {
+                rigidBodyComponent.AddForce(Vector3.up * 5, ForceMode.VelocityChange);
+            }
         }
 
         horizontalInput = Input.GetAxis("Horizontal");
     }
+    
     // Called every physics update    
     private void FixedUpdate()
     {
-        if (!isGrounded)
-        {
-            return;
-        }
-        
-        if (jumpKeyWasPressed)
-        {
-            rigidBodyComponent.AddForce(Vector3.up * 5, ForceMode.VelocityChange);
-            jumpKeyWasPressed = false;
-        }
-        
         rigidBodyComponent.velocity = new Vector3(horizontalInput, rigidBodyComponent.velocity.y, 0);
     }
 

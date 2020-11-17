@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8976525522036374154}
   - component: {fileID: 78674197231011220}
   - component: {fileID: -4324110722452249334}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Magnet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -91,7 +91,7 @@ SphereCollider:
   m_GameObject: {fileID: 7577477696992578198}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4100aa868db7546f594251292c5d4bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  magnet: {fileID: 0}
   speed: 8
 --- !u!54 &-4324110722452249334
 Rigidbody:
@@ -118,9 +119,9 @@ Rigidbody:
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
-  m_AngularDrag: 0.05
+  m_AngularDrag: 0
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0

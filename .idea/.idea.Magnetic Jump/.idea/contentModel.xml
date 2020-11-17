@@ -13,7 +13,6 @@
           <e p="MainCamera.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="ProjectileTrigger.cs" t="Include" />
-          <e p="Throw.cs" t="Include" />
         </e>
       </e>
       <e p="Magnetic Jump.sln" t="IncludeFlat" />

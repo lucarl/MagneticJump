@@ -17,7 +17,7 @@ public class ProjectileTrigger : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                Instantiate(m_Projectile, m_SpawnTransform.position, m_SpawnTransform.rotation);
+                    Instantiate(m_Projectile, m_SpawnTransform.position, m_SpawnTransform.rotation);
             }
         }
 }

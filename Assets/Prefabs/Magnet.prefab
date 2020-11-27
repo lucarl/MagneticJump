@@ -93,7 +93,7 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.3
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &78674197231011220
 MonoBehaviour:
@@ -107,8 +107,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4100aa868db7546f594251292c5d4bbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  magnet: {fileID: 0}
-  speed: 8
+  magnet: {fileID: -4324110722452249334}
+  speed: 224.88322
+  attraction: {fileID: 1948721169061235365, guid: 98625405ccd40ce41805157d2e1d14a6,
+    type: 3}
 --- !u!54 &-4324110722452249334
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -6,13 +6,15 @@
       <e p="Assets" t="Include">
         <e p="Magnet.cs" t="Include" />
         <e p="Scripts" t="Include">
-          <e p="Jellyfier.cs" t="Include" />
-          <e p="JellyVertex.cs" t="Include" />
+          <e p="Coin.cs" t="Include" />
+          <e p="Elevator.cs" t="Include" />
           <e p="LookTowardMouse.cs" t="Include" />
           <e p="Magnet.cs" t="Include" />
+          <e p="MagnetAttraction.cs" t="Include" />
           <e p="MainCamera.cs" t="Include" />
           <e p="Player.cs" t="Include" />
           <e p="ProjectileTrigger.cs" t="Include" />
+          <e p="ScoreCalculator.cs" t="Include" />
         </e>
       </e>
       <e p="Magnetic Jump.sln" t="IncludeFlat" />
